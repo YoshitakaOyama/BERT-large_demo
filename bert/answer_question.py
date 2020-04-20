@@ -4,7 +4,7 @@ import textwrap
 import torch
 
 
-def answer_question(question, answer_text):
+def answer_question(question, answer_text, model_name=None, tokenizer_name=None):
     """
     Takes a `question` string and an `answer_text` string (which contains the
     answer), and identifies the words within the `answer_text` that are the
@@ -14,14 +14,21 @@ def answer_question(question, answer_text):
     ----------
     question : str
     answer_text : str
+    model : str
+    tokenizer : str
 
     Return
     -------
     answer : str
     """
-    # ======== Model & Tokenizer ========
-    model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
-    tokenizer = BertTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+    # ======== Model & Tokenizer (default: bert-large finetuned squad ver.1)========
+    if model_name is None:
+        model_name = 'bert-large-uncased-whole-word-masking-finetuned-squad'
+    if tokenizer_name is None:
+        tokenizer_name = 'bert-large-uncased-whole-word-masking-finetuned-squad'
+    
+    model = BertForQuestionAnswering.from_pretrained(model_name)
+    tokenizer = BertTokenizer.from_pretrained(tokenizer_name)
 
     # ======== Tokenize ========
     input_ids = tokenizer.encode(question, answer_text)
