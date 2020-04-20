@@ -7,6 +7,7 @@
 python demo.py
 ```
 3. To do QA,　Pass the question string and reference string to the `answer_question function` in `answer_question.py` and execute it. The answer comes back. The model and tokenizer used here are automatically downloaded at the first startup ([Click here for model details](https://github.com/huggingface/transformers)).
+
 ex.)
 ```
 import textwrap
