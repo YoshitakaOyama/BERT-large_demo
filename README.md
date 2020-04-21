@@ -1,17 +1,17 @@
 [Reference](https://mccormickml.com/2020/03/10/question-answering-with-a-fine-tuned-BERT/)
 
-# Execution procedure (QA on BERT-large)
+# Execution procedure (Question Answering on BERT-large)
 1. Install required python package.
 2. If you want to try out the model and tokenizer specifications, or visualize the start and end scores for every word, run
 ```
 python demo.py
 ```
-3. To do QA,　Pass the question string and reference string to the `answer_question function` in `answer_question.py` and execute it. The answer comes back. The model and tokenizer used here are automatically downloaded at the first startup ([Click here for model details](https://github.com/huggingface/transformers)).
+3. To do QA,　Pass the question string and reference string to the `answer_question function` in `predict.py` and execute it. The answer comes back. The model and tokenizer used here are automatically downloaded at the first startup ([Click here for model details](https://github.com/huggingface/transformers)).
 
 ex.)
 ```
 import textwrap
-from bert.answer_question import answer_question
+from bert.predict import answer_question
 
 
 wrapper = textwrap.TextWrapper(width=80)

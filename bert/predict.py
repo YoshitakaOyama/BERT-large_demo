@@ -34,7 +34,7 @@ def answer_question(question, answer_text, model_name=None, tokenizer_name=None)
     input_ids = tokenizer.encode(question, answer_text)
 
     # Report how long the input sequence is.
-    print(f"Query has {len(input_ids):,} tokens.\n")
+    # print(f"Query has {len(input_ids):,} tokens.\n")
 
     # ======== Set Segment IDs ========
     sep_index = input_ids.index(tokenizer.sep_token_id)
