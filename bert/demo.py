@@ -5,8 +5,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 from pprint import pprint
-import sys
-import textwrap
 
 
 # Load BERT-large model
@@ -91,7 +89,7 @@ print('Answer: "' + answer + '"')
 sns.set(style='darkgrid')
 
 # Increase the plot size and font size.
-#sns.set(font_scale=1.5)
+# sns.set(font_scale=1.5)
 plt.rcParams["figure.figsize"] = (16,8)
 
 # Pull the scores out of PyTorch Tensors and convert them to 1D numpy arrays.
